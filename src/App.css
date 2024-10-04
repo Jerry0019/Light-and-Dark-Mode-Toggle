@@ -1,25 +1,23 @@
 /* Base styles for the app */
 .App {
   text-align: center;
-  transition: background-color 0.5s ease;
   padding: 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: color 0.5s ease;
 }
 
-/* Light mode styles */
+/* Light mode styles with animated background */
 .light {
-  background-color: white;
-  color: black;
+  animation: lightBackground 5s ease infinite;
 }
 
-/* Dark mode styles */
+/* Dark mode styles with animated background */
 .dark {
-  background-color: black;
-  color: white;
+  animation: darkBackground 5s ease infinite;
 }
 
 /* Button styling */
@@ -31,19 +29,56 @@ button {
   cursor: pointer;
   background-color: #007bff;
   color: white;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Button hover effect */
+/* Button hover effect with animation */
 button:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
+  animation: bounce 0.5s ease;
 }
 
 /* Button active effect */
 button:active {
   background-color: #004080;
   transform: scale(1);
+}
+
+/* Button bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Light mode background animation */
+@keyframes lightBackground {
+  0% {
+    background-color: #ffeb3b;
+  }
+  50% {
+    background-color: #fff59d;
+  }
+  100% {
+    background-color: #ffeb3b;
+  }
+}
+
+/* Dark mode background animation */
+@keyframes darkBackground {
+  0% {
+    background-color: #424242;
+  }
+  50% {
+    background-color: #212121;
+  }
+  100% {
+    background-color: #424242;
+  }
 }
 
 /* Add some margin to the button */
