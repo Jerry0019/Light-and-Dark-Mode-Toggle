@@ -1,23 +1,25 @@
 /* Base styles for the app */
 .App {
   text-align: center;
+  transition: background-color 0.5s ease;
   padding: 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: color 0.5s ease;
 }
 
-/* Light mode styles with animated background */
+/* Light mode styles */
 .light {
-  animation: lightBackground 5s ease infinite;
+  background-color: white;
+  color: black;
 }
 
-/* Dark mode styles with animated background */
+/* Dark mode styles */
 .dark {
-  animation: darkBackground 5s ease infinite;
+  background-color: black;
+  color: white;
 }
 
 /* Button styling */
@@ -52,32 +54,6 @@ button:active {
   }
   50% {
     transform: scale(1.1);
-  }
-}
-
-/* Light mode background animation */
-@keyframes lightBackground {
-  0% {
-    background-color: #ffeb3b;
-  }
-  50% {
-    background-color: #fff59d;
-  }
-  100% {
-    background-color: #ffeb3b;
-  }
-}
-
-/* Dark mode background animation */
-@keyframes darkBackground {
-  0% {
-    background-color: #424242;
-  }
-  50% {
-    background-color: #212121;
-  }
-  100% {
-    background-color: #424242;
   }
 }
 
