@@ -1,4 +1,5 @@
-/* Base styles for the app */
+
+
 .App {
   text-align: center;
   transition: background-color 0.5s ease;
@@ -8,19 +9,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Arial', sans-serif; /* Add a more modern, readable font */
+  font-family: 'Arial', sans-serif;
+  animation: fadeIn 0.5s ease; /* Added Fade-in animation */
 }
 
 /* Light mode styles */
 .light {
-  background-color: #f5f5f5; /* Softer background color for light mode */
-  color: #333; /* Darker text for better contrast */
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 /* Dark mode styles */
 .dark {
-  background-color: #1e1e1e; /* Use a dark gray for dark mode */
-  color: #f1f1f1; /* Lighter text for better readability */
+  background-color: #1e1e1e;
+  color: #f1f1f1;
 }
 
 /* Button styling */
@@ -33,21 +35,34 @@ button {
   background-color: #007bff;
   color: white;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Increase shadow for more depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 20px; /* Add margin to the button */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .App {
+    padding: 1rem;
+  }
 }
 
 /* Button hover effect with animation */
 button:hover {
   background-color: #0056b3;
   animation: bounce 0.5s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Button active effect */
 button:active {
   background-color: #004080;
-  transform: scale(0.95); /* Slight shrink effect on click */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on click */
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Button bounce animation */
@@ -60,7 +75,32 @@ button:active {
   }
 }
 
-/* Add some margin to the button */
-button {
-  margin-top: 20px;
+/* Disabled button styling */
+button:disabled {
+  background-color: #c0c0c0;
+  color: #7d7d7d;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* High contrast mode */
+.high-contrast {
+  background-color: #000;
+  color: #ff0;
+}
+
+/* Button focus effect for accessibility */
+button:focus {
+  outline: 3px solid #ffcc00;
+  outline-offset: 2px;
+}
+
+/* Fade in animation for the App component */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
